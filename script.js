@@ -34,3 +34,33 @@ nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =>
   nav.classList.remove('open');
   menuToggle.setAttribute('aria-expanded', 'false');
 }));
+
+function playVideo(video, { poster = false } = {}) {
+  const source = video.querySelector('source[data-src]');
+  if (!source) return;
+  if (poster && video.dataset.poster) video.poster = video.dataset.poster;
+  source.src = source.dataset.src;
+  video.preload = 'auto';
+  video.load();
+  video.play().catch(() => {});
+  source.removeAttribute('data-src');
+}
+
+const heroVideo = document.querySelector('.hero-video');
+window.addEventListener('load', () => {
+  window.setTimeout(() => playVideo(heroVideo), 1800);
+}, { once: true });
+
+const reserveVideo = document.querySelector('.reserve-photo video');
+if ('IntersectionObserver' in window) {
+  const reserveObserver = new IntersectionObserver((entries) => {
+    if (entries.some((entry) => entry.isIntersecting)) {
+      playVideo(reserveVideo, { poster: true });
+      reserveObserver.disconnect();
+    }
+  }, { rootMargin: '240px' });
+  reserveObserver.observe(reserveVideo);
+} else {
+  reserveVideo.dataset.poster && (reserveVideo.poster = reserveVideo.dataset.poster);
+  window.setTimeout(() => playVideo(reserveVideo, { poster: true }), 1800);
+}

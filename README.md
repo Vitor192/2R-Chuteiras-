@@ -7,7 +7,7 @@ Site institucional estático da loja. Para visualizar, abra `index.html` em um n
 - `assets/logo-2r.jpeg`: logo enviada.
 - `assets/hero-2r.mp4`: vídeo de fundo com reprodução automática, sem áudio e em loop.
 - `assets/reserva-chuteira.mp4`: vídeo em loop na área de reserva.
-- `assets/*.png`: imagens do catálogo enviadas, separadas em `campo` e `society`.
+- `assets/*.jpg`: versões compactadas das imagens para reduzir o tempo de carregamento; os PNGs originais foram mantidos como fontes.
 - `index.html`, `styles.css`, `script.js`: estrutura, estilo responsivo e interações.
 
 Os botões de reserva usam o WhatsApp informado (22 98142-8395). O Instagram está conectado ao perfil `@2r_chuteiras`.
