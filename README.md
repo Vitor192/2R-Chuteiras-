@@ -5,7 +5,7 @@ Site institucional estático da loja. Para visualizar, abra `index.html` em um n
 ## Conteúdo
 
 - `assets/logo-2r.jpeg`: logo enviada.
-- `assets/hero-2r.mp4`: vídeo de fundo com reprodução automática, sem áudio e em loop.
+- `assets/hero-2r-compact.mp4`: vídeo de fundo com reprodução automática, sem áudio e em loop.
 - `assets/reserva-chuteira.mp4`: vídeo em loop na área de reserva.
 - `assets/*.jpg`: versões compactadas das imagens para reduzir o tempo de carregamento; os PNGs originais foram mantidos como fontes.
 - `index.html`, `styles.css`, `script.js`: estrutura, estilo responsivo e interações.

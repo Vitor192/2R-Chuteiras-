@@ -47,12 +47,9 @@ function playVideo(video, { poster = false } = {}) {
 }
 
 const heroVideo = document.querySelector('.hero-video');
-const startHeroVideo = () => requestAnimationFrame(() => playVideo(heroVideo));
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startHeroVideo, { once: true });
-} else {
-  startHeroVideo();
-}
+window.addEventListener('load', () => {
+  window.setTimeout(() => playVideo(heroVideo), 1200);
+}, { once: true });
 
 const reserveVideo = document.querySelector('.reserve-photo video');
 if ('IntersectionObserver' in window) {
