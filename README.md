@@ -14,4 +14,4 @@ O vídeo inicial começa a carregar junto com a página, sem imagem de poster. A
 
 Os botões de reserva usam o WhatsApp informado (22 98142-8395). O Instagram está conectado ao perfil `@2r_chuteiras`.
 
-O vídeo mais recente enviado é usado na área de reserva. Os vídeos são reproduzidos sem áudio e em loop.
+O vídeo mais recente enviado é usado na área de reserva e começa a carregar quando a seção se aproxima da tela, sem poster de imagem. Os vídeos são reproduzidos sem áudio e em loop.

@@ -35,10 +35,9 @@ nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =>
   menuToggle.setAttribute('aria-expanded', 'false');
 }));
 
-function playVideo(video, { poster = false } = {}) {
+function playVideo(video) {
   const source = video.querySelector('source[data-src]');
   if (!source) return;
-  if (poster && video.dataset.poster) video.poster = video.dataset.poster;
   source.src = source.dataset.src;
   video.preload = 'auto';
   video.load();
@@ -51,12 +50,11 @@ const reserveVideo = document.querySelector('.reserve-photo video');
 if ('IntersectionObserver' in window) {
   const reserveObserver = new IntersectionObserver((entries) => {
     if (entries.some((entry) => entry.isIntersecting)) {
-      playVideo(reserveVideo, { poster: true });
+      playVideo(reserveVideo);
       reserveObserver.disconnect();
     }
-  }, { rootMargin: '240px' });
+  }, { rootMargin: '1200px 0px' });
   reserveObserver.observe(reserveVideo);
 } else {
-  reserveVideo.dataset.poster && (reserveVideo.poster = reserveVideo.dataset.poster);
-  window.setTimeout(() => playVideo(reserveVideo, { poster: true }), 1800);
+  window.setTimeout(() => playVideo(reserveVideo), 1800);
 }
